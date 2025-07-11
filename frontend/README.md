@@ -105,3 +105,8 @@ A full-stack web application that fetches YouTube video comments and analyzes th
 
 ## Project Structure
 
+/backend # Flask server, ML model, and API code
+/frontend # Next.js React frontend application
+/cyberbullying_model.pkl # Serialized ML model file
+.gitignore # Files and folders ignored by Git
+README.md # Project documentation
