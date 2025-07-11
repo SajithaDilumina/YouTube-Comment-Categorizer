@@ -103,9 +103,6 @@ A full-stack web application that fetches YouTube video comments and analyzes th
 
 ---
 
-
----
-
 ## Model Details
 
 - Trained on a Twitter dataset labeled for various cyberbullying categories.  
