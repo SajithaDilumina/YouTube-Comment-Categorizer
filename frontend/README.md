@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# YouTube Comment Categorizer
+
+A full-stack web application that fetches YouTube video comments and analyzes them for cyberbullying using a machine learning model.
+
+---
+
+## Features
+
+- Fetch comments from any public YouTube video using the YouTube Data API.
+- Analyze comments to detect cyberbullying categories (e.g., ethnicity, gender, other types).
+- Machine Learning model trained with TF-IDF and Logistic Regression on a Twitter cyberbullying dataset.
+- Flask REST API to serve prediction results.
+- Next.js frontend for user interaction with real-time analysis display.
+
+---
+
+## Tech Stack
+
+- **Frontend:** Next.js, React
+- **Backend:** Flask (Python)
+- **Machine Learning:** Scikit-learn (TF-IDF + Logistic Regression)
+- **APIs:** YouTube Data API
+- **Others:** Axios, Flask-CORS
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Python 3.8 or higher
+- Node.js 16 or higher
+- A valid YouTube Data API key
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Backend Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Navigate to the backend folder:
 
-## Learn More
+    ```bash
+    cd backend
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Create and activate a Python virtual environment:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    python -m venv venv
+    # On Windows
+    venv\Scripts\activate
+    # On macOS/Linux
+    source venv/bin/activate
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Install the required Python packages:
 
-## Deploy on Vercel
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Create a `.env` file in the backend folder with your API key (do **not** commit this file):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    ```env
+    YOUTUBE_API_KEY=your_api_key_here
+    ```
+
+5. Run the Flask server:
+
+    ```bash
+    python app.py
+    ```
+
+---
+
+### Frontend Setup
+
+1. Navigate to the frontend folder:
+
+    ```bash
+    cd frontend
+    ```
+
+2. Install Node.js dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Usage
+
+- Paste a YouTube video URL into the input field.
+- Click **Analyze** to fetch comments and view cyberbullying categorizations and confidence scores.
+
+---
+
+## Project Structure
+
