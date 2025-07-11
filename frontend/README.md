@@ -103,10 +103,25 @@ A full-stack web application that fetches YouTube video comments and analyzes th
 
 ---
 
-## Project Structure
 
-/backend # Flask server, ML model, and API code
-/frontend # Next.js React frontend application
-/cyberbullying_model.pkl # Serialized ML model file
-.gitignore # Files and folders ignored by Git
-README.md # Project documentation
+---
+
+## Model Details
+
+- Trained on a Twitter dataset labeled for various cyberbullying categories.  
+- Uses TF-IDF vectorization and Logistic Regression.  
+- Exposed as a REST API endpoint via Flask (`/predict`).  
+- Returns the predicted category and confidence for each input comment.
+
+---
+
+## Important Notes
+
+- Keep your `.env` file secret and out of version control.  
+- `node_modules/`, `.next/`, and other large or environment-specific files are excluded via `.gitignore`.  
+- You can retrain or update the model by modifying the training script and re-exporting the pickle file.
+
+---
+
+Feel free to contribute, report issues, or ask questions!
+
